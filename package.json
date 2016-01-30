@@ -1,6 +1,6 @@
 {
   "name": "extend-proto",
-  "description": "generic `__proto__` injection utility",
+  "description": "generic prototype injection utility",
   "version": "0.0.1",
   "contributors": [
     "Jeremiah Senkpiel <fishrock123@rocketmail.com>"
