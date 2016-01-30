@@ -1,0 +1,37 @@
+{
+  "name": "extend-proto",
+  "description": "generic __proto__ injection utility",
+  "version": "0.0.0",
+  "contributors": [
+    "Jeremiah Senkpiel <fishrock123@rocketmail.com>"
+  ],
+  "license": "MIT",
+  "repository": "pillarjs/extend-proto",
+  "keywords": [
+    "proto",
+    "__proto__",
+    "prototype",
+    "extend",
+    "inject"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "istanbul": "0.3.2"
+  },
+  "engines": {
+    "node": ">= 4"
+  },
+  "files": [
+    "LICENSE",
+    "HISTORY.md",
+    "README.md",
+    "index.js"
+  ],
+  "scripts": {
+    "test": "mocha --reporter spec --check-leaks",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks"
+  }
+}
