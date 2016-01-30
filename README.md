@@ -6,6 +6,9 @@
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
+A utility to inject a prototype chain, fully generic and adaptable.
+
+This largely exists for performance. Injecting a single prototype with many properties on it has been historically faster than adding those properties to an existing instance.
 
 ```js
 var http = require('http')
