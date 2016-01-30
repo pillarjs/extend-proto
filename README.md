@@ -35,9 +35,9 @@ http.createServer(function(req, res) {
 [npm-url]: https://npmjs.org/package/extend-proto
 [node-version-image]: https://img.shields.io/node/v/extend-proto.svg?style=flat
 [node-version-url]: http://nodejs.org/download/
-[travis-image]: https://img.shields.io/travis/jshttp/extend-proto.svg?style=flat
-[travis-url]: https://travis-ci.org/jshttp/extend-proto
-[coveralls-image]: https://img.shields.io/coveralls/jshttp/extend-proto.svg?style=flat
-[coveralls-url]: https://coveralls.io/r/jshttp/extend-proto?branch=master
+[travis-image]: https://img.shields.io/travis/pillarjs/extend-proto.svg?style=flat
+[travis-url]: https://travis-ci.org/pillarjs/extend-proto
+[coveralls-image]: https://img.shields.io/coveralls/pillarjs/extend-proto.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/pillarjs/extend-proto?branch=master
 [downloads-image]: https://img.shields.io/npm/dm/extend-proto.svg?style=flat
 [downloads-url]: https://npmjs.org/package/extend-proto
