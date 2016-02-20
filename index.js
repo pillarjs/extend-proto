@@ -4,6 +4,7 @@
  * MIT Licensed
  */
 
+var setPrototypeOf = Object.setPrototypeOf || ({__proto__:[]} instanceof Array ? setProtoOf : mixinProperties)
 
 /**
  * Expose `Proto`.
@@ -41,7 +42,7 @@ function Proto(protos, options) {
   var middleware = function setProto() {
     var i = arguments.length
     while (i--) {
-      arguments[i].__proto__ = middleware[_protos[i]].proto
+      setPrototypeOf(arguments[i], middleware[_protos[i]].proto)
     }
   }
 
@@ -50,9 +51,10 @@ function Proto(protos, options) {
   while (i--) {
     var name = _protos[i]
     var prop = middleware[name] = {
-        proto: { __proto__: protos[name].prototype }
+        proto: {}
       , _opts: opts
     }
+    setPrototypeOf(prop.proto, protos[name].prototype)
     prop.defineProperty = defineProperty.bind(prop)
     prop.defineProperties = defineProperties.bind(prop)
   }
@@ -62,7 +64,7 @@ function Proto(protos, options) {
 
 
 /**
- * define a property onto the __proto__
+ * define a property onto the prototype
  */
 function defineProperty(name, descriptor) {
   if (!name) {
@@ -90,7 +92,7 @@ function defineProperty(name, descriptor) {
 
 
 /**
- * define properties on __proto__ via an object map
+ * define properties on prototype via an object map
  */
 function defineProperties(props) {
   if (!props) {
@@ -108,4 +110,14 @@ function defineProperties(props) {
   }
 
   Object.defineProperties(this.proto, props)
+}
+
+function setProtoOf(obj, proto) {
+  obj.__proto__ = proto
+}
+
+function mixinProperties(obj, proto) {
+  for (var prop in proto) {
+    obj[prop] = proto[prop]
+  }
 }
